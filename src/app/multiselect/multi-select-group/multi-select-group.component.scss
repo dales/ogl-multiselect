@@ -1,0 +1,26 @@
+:root {
+  --padding-left-step: 10;
+  --padding-left: 15px;
+}
+
+.title {
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  user-select: none;
+  cursor: pointer;
+
+  .title-text {
+    margin-right: auto;
+  }
+
+  i:first-child {
+    margin-right: 5px;
+  }
+}
+
+.group-items {
+  padding-left: var(--padding-left);
+}

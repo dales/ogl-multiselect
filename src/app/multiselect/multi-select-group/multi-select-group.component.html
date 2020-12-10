@@ -1,0 +1,17 @@
+<div class="multi-select-group">
+  <div class="title" (click)="toggleOpen()">
+    <i
+      class="fa fa-fw"
+      [ngClass]="checked ? 'fa-check-square' : 'fa-square-o'"
+      (click)="toggleCheck($event)"
+    ></i>
+    <div class="title-text">{{ title }}</div>
+    <i
+      class="fa fa-fw"
+      [ngClass]="!isOpen ? 'fa-chevron-down' : 'fa-chevron-up'"
+    ></i>
+  </div>
+  <div class="group-items" *ngIf="isOpen">
+    <ng-content></ng-content>
+  </div>
+</div>

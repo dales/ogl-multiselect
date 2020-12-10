@@ -1,0 +1,7 @@
+<div class="multi-select-option" (click)="toggleCheck()" #option>
+  <i
+    class="fa fa-fw"
+    [ngClass]="checked ? 'fa-check-square' : 'fa-square-o'"
+  ></i>
+  <ng-content></ng-content>
+</div>

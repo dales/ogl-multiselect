@@ -1,0 +1,17 @@
+<div class="multi-select">
+  <div class="title" (click)="toggleOpen()">
+    <div class="title-text">
+      {{ title }}
+    </div>
+    <div class="title-icon">
+      <i
+        class="fa fa-fw"
+        [ngClass]="!isOpen ? 'fa-chevron-down' : 'fa-chevron-up'"
+      ></i>
+    </div>
+  </div>
+
+  <div class="multi-select-options" *ngIf="isOpen">
+    <ng-content></ng-content>
+  </div>
+</div>

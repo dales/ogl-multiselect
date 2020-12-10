@@ -1,0 +1,12 @@
+.multi-select-option {
+  padding: 10px;
+
+  &:hover {
+    background-color: rgb(243, 243, 243);
+    cursor: pointer;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+}
