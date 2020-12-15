@@ -5,7 +5,7 @@
       [ngClass]="checked ? 'fa-check-square' : 'fa-square-o'"
       (click)="toggleCheck($event)"
     ></i>
-    <div class="title-text">{{ title }}</div>
+    <div class="title-text">{{ value }}</div>
     <i
       class="fa fa-fw"
       [ngClass]="!isOpen ? 'fa-chevron-down' : 'fa-chevron-up'"

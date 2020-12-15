@@ -2,8 +2,10 @@ import {
   AfterViewInit,
   Component,
   ContentChildren,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
   QueryList,
 } from '@angular/core';
 import { MultiSelectOptionComponent } from '../multi-select-option/multi-select-option.component';
@@ -14,9 +16,10 @@ import { MultiSelectOptionComponent } from '../multi-select-option/multi-select-
   styleUrls: ['./multi-select-group.component.scss'],
 })
 export class MultiSelectGroupComponent implements OnInit, AfterViewInit {
-  @Input('title') title: string;
+  @Input('value') value: string;
   @Input('level') level: number;
-  checked = false;
+  @Input('checked') checked = false;
+  @Output('checkedChange') onChange = new EventEmitter<boolean>();
 
   @ContentChildren(MultiSelectOptionComponent)
   options: QueryList<MultiSelectOptionComponent>;
@@ -34,6 +37,7 @@ export class MultiSelectGroupComponent implements OnInit, AfterViewInit {
   toggleCheck($event: MouseEvent) {
     $event.stopPropagation();
     this.checked = !this.checked;
+    this.onChange.emit(this.checked);
     this.options.forEach((o) => o.toggleCheck(this.checked));
   }
 

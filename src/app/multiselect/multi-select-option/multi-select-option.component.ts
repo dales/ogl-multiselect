@@ -16,6 +16,7 @@ import {
 export class MultiSelectOptionComponent implements OnInit {
   @Input('checked') checked = false;
   @Output('checkedChange') onChange = new EventEmitter<boolean>();
+  @Input('value') value
   @ViewChild('option', { static: true }) option: ElementRef;
   constructor() {}
 
